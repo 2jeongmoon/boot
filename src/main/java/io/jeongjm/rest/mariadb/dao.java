@@ -24,4 +24,16 @@ public class dao {
             return mss;
         });
     }
+
+    public List<Map<String, ?>> select() {
+
+        return jt.query("SELECT * FROM fmk_member", (rs, rowNum) -> {
+            Map<String, Object> mss = new HashMap<>();
+            mss.put("idx", rs.getInt(1));
+            mss.put("mobile", rs.getString(5));
+            mss.put("name", rs.getString(10));
+            mss.put("email", rs.getString(4));
+            return mss;
+        });
+    }
 }

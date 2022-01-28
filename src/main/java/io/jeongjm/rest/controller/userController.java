@@ -41,4 +41,9 @@ public class userController {
     public List<Map<String, ?>> getMessages() {
         return smd.selectAll();
     }
+
+    @GetMapping("/member/{email}")
+    public List<Map<String, ?>> getMessages(@PathVariable String id) {
+        return smd.select();
+    }
 }
