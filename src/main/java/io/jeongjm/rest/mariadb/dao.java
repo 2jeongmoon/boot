@@ -1,6 +1,8 @@
 package io.jeongjm.rest.mariadb;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.PropertySources;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -8,7 +10,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
+@PropertySources({
+    @PropertySource( value = "file:F:/work/project/boot/config.properties", ignoreResourceNotFound = true ),
+})
 @Repository
 public class dao {
     @Autowired
